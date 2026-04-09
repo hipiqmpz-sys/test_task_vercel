@@ -1,12 +1,12 @@
 import json
 from supabase import create_client
 
-# Твои данные из настроек Supabase
+# Данные из настроек Supabase
 url = "url"
 key = "key"
 supabase = create_client(url, key)
 
-# Открываем твой файл
+# Открываем файл
 with open('mock_orders.json', 'r', encoding='utf-8') as f:
     orders_data = json.load(f)
 
