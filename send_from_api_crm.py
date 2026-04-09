@@ -1,11 +1,10 @@
 import json
 import requests
 
-# 1. ТВОИ ДАННЫЕ
+# 1. ДАННЫЕ
 CRM_URL = "CRM_URL"  # Твой URL
 API_KEY = "api_key"  # Твой ключ
 
-# Путь к API методу для создания заказов
 endpoint = f"{CRM_URL}/api/v5/orders/create"
 
 # 2. ЧИТАЕМ ФАЙЛ
@@ -17,7 +16,7 @@ print(f"Начинаю загрузку {len(orders_data)} заказов в Ret
 for i, order in enumerate(orders_data):
     # Преобразуем формат JSON под требования RetailCRM API
     payload = {
-        "site": "hipiqmpz",  # Укажи символьный код твоего магазина из настроек CRM
+        "site": "hipiqmpz", 
         "order": json.dumps({
             "firstName": order['firstName'],
             "lastName": order['lastName'],
