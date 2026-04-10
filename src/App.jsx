@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   async function fetchOrders() {
-    const { data, error } = await supabase.from('orders').select('*');
+    const { data, error } = await supabase.from('orders').select('*').gt('total_sum', 50000);
     if (error) console.log('error', error);
     else setOrders(data);
     setLoading(false);
